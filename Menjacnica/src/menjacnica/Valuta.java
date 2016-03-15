@@ -16,7 +16,11 @@ public class Valuta {
 	}
 
 	public void setNaziv(String naziv) {
+		if(naziv.isEmpty()){
+			System.out.println("Greska: Uneli ste prazan naziv!");
+		}else{
 		this.naziv = naziv;
+		}
 	}
 	
 	public String getSkraceniNaziv() {
@@ -24,7 +28,11 @@ public class Valuta {
 	}
 
 	public void setSkraceniNaziv(String skraceniNaziv) {
+		if(skraceniNaziv.isEmpty()){
+			System.out.println("Greska: Uneli ste prazan skraceni naziv!");
+		}else{
 		this.skraceniNaziv = skraceniNaziv;
+		}
 	}
 
 	public GregorianCalendar getDatum() {
@@ -32,7 +40,11 @@ public class Valuta {
 	}
 
 	public void setDatum(GregorianCalendar datum) {
+		if(datum==null){
+			System.out.println("Greska: Uneli ste nedozvoljenu vrednost!");
+		}else{
 		this.datum = datum;
+		}
 	}
 
 	public double getProdajniKurs() {
@@ -40,7 +52,11 @@ public class Valuta {
 	}
 
 	public void setProdajniKurs(double prodajniKurs) {
+		if(prodajniKurs<=0){
+			System.out.println("Greska: Uneli ste nedozvoljenu vrednost!");
+		}else{
 		this.prodajniKurs = prodajniKurs;
+		}
 	}
 
 	public double getSrednjiKurs() {
@@ -48,7 +64,11 @@ public class Valuta {
 	}
 
 	public void setSrednjiKurs(double srednjiKurs) {
+		if(srednjiKurs<=0){
+			System.out.println("Greska: Uneli ste nedozvoljenu vrednost!");
+		}else{
 		this.srednjiKurs = srednjiKurs;
+		}
 	}
 
 	public double getKupovniKurs() {
@@ -56,12 +76,16 @@ public class Valuta {
 	}
 
 	public void setKupovniKurs(double kupovniKurs) {
+		if(kupovniKurs<=0){
+			System.out.println("Greska: Uneli ste nedozvoljenu vrednost!");
+		}else{
 		this.kupovniKurs = kupovniKurs;
+		}
 	}
 
 	public String toString() {
-		return "Valuta [naziv=" + naziv + ", skraceniNaziv=" + skraceniNaziv + ", datum=" + datum + ", prodajniKurs="
-				+ prodajniKurs + ", srednjiKurs=" + srednjiKurs + ", kupovniKurs=" + kupovniKurs + "]";
+		return "Naziv valute: "+naziv+"\n"+"Datum: "+datum+"\n"+"Kupovni kurs: "+kupovniKurs+"\n"
+				+"Srednji kurs: "+srednjiKurs+"\n"+"Prodajni kurs: "+prodajniKurs;
 	}
 
 	public int hashCode() {
